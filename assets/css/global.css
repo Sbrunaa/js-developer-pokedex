@@ -1,24 +1,29 @@
+/* Aplica a fonte 'Roboto' e o box-sizing 'border-box' para todos os elementos */
 * {
-    font-family: 'Roboto', sans-serif;
-    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;  /* Define a fonte 'Roboto' para todos os elementos da página */
+    box-sizing: border-box;  /* Define que o tamanho dos elementos inclui o preenchimento e a borda, não apenas o conteúdo */
 }
 
+/* Define o estilo geral do body */
 body {
-    background-color: #f6f8fc;
+    background-color: #f6f8fc;  /* Define uma cor de fundo suave para o body (um tom claro de azul) */
 }
 
+/* Estilo para o contêiner principal (.content) */
 .content {
-    width: 100vw;
-    height: 100vh;
-    padding: 1rem;
-    background-color: #fff;
+    width: 100vw;  /* Define a largura da área de conteúdo para ocupar toda a largura da tela (100% da largura da viewport) */
+    height: 100vh;  /* Define a altura da área de conteúdo para ocupar toda a altura da tela (100% da altura da viewport) */
+    padding: 1rem;  /* Adiciona um preenchimento interno de 1rem ao redor do conteúdo */
+    background-color: #fff;  /* Define a cor de fundo da área de conteúdo como branca */
 }
 
+/* Media query para telas grandes (largura mínima de 992px) */
 @media screen and (min-width: 992px) {
+    /* Ajusta o estilo do contêiner principal para telas grandes */
     .content {
-        max-width: 992px;
-        height: auto;
-        margin: 1rem auto;
-        border-radius: 1rem;
+        max-width: 992px;  /* Define uma largura máxima de 992px para o contêiner */
+        height: auto;  /* Deixa a altura da área de conteúdo ajustar-se automaticamente, dependendo do conteúdo */
+        margin: 1rem auto;  /* Adiciona uma margem de 1rem no topo e no fundo, e centraliza o conteúdo horizontalmente */
+        border-radius: 1rem;  /* Arredonda as bordas do contêiner em 1rem */
     }
 }
