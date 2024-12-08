@@ -9,17 +9,12 @@ function convertPokeApiDetailToPokemon(pokeDetail) {
      // Atribui o nome do Pokémon a partir do nome obtido nos detalhes da API
     pokemon.name = pokeDetail.name
 
-    pokemon.experiencia = pokeDetail.base_experience
+    pokemon.base_experience = pokeDetail.base_experience
     
-    pokemon.altura = pokeDetail.height
+    pokemon.height = pokeDetail.height
     
-    pokemon.peso = pokeDetail.weight
+    pokemon.weight = pokeDetail.weight
 
-    pokemon.formas = pokeDetail.forms
-
-    pokemon.localidade = pokeDetail.location_area_encounters
-
-    pokemon.movimentos = pokeDetail.moves
    
     // Cria um array 'types' com os tipos do Pokémon, mapeando o array de 'types' da API para extrair o nome de cada tipo
     const types = pokeDetail.types.map((typeSlot) => typeSlot.type.name)

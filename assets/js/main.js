@@ -12,6 +12,7 @@ let offset = 0;
 
 // Função que converte as informações de um Pokémon em um elemento <li> (lista) HTML
 function convertPokemonToLi(pokemon) {
+    const modalId = `modal-${pokemon.number}`; // Gera um ID único para o modal
     return `
         <li class="pokemon ${pokemon.type}">
             <span class="number">${pokemon.number}</span>
@@ -22,35 +23,32 @@ function convertPokemonToLi(pokemon) {
                     ${pokemon.types.map((type) => `<li class="type ${type}">${type}</li>`).join('')}
                 </ol>
 
-                <img src="${pokemon.photo}"
-                     alt="${pokemon.name}">
+                <img src="${pokemon.photo}" alt="${pokemon.name}">
             </div>
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                Detalhes 
+            <button type="button" class="btn btn-outline-light" style="--bs-btn-font-size: .75rem;" data-bs-toggle="modal" data-bs-target="#${modalId}">
+                Detalhes
             </button>
         </li>
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="${modalId}" tabindex="-1" aria-labelledby="${modalId}-label" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                    <ul class="list-group">
-                        <li class="list-group-item">Altura:${pokemon.height}</li>
-                        <li class="list-group-item">Experiencia:${pokemon.base_experience}</li>
-                        <li class="list-group-item">Peso:${pokemon.weight}</li>
-                        <li class="list-group-item">Formas:${pokemon.forms}/li>
-                        <li class="list-group-item">Movimento:${pokemon.moves}</li>
-                        <li class="list-group-item">Localidade:${pokemon.location_area_encounters
-                        }</li>
-                 </ul>
+                        <ul class="list-group">
+                            <li class="list-group-item">Nome: ${pokemon.name}</li>
+                            <li class="list-group-item">Altura: ${pokemon.height}</li>
+                            <li class="list-group-item">Experiência: ${pokemon.base_experience}</li>
+                            <li class="list-group-item">Peso: ${pokemon.weight}</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
-    `
+    `;
 }
+
     //Função que carrega os itens de pokémons com base no offset e limit passados como parâmetros
     function loadPokemonItens(offset, limit) {
         // Chama o método 'getPokemons' da 'pokeApi' para buscar os pokémons com o offset e limit especificados

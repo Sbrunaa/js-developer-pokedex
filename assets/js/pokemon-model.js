@@ -5,11 +5,11 @@ class Pokemon {
     type;
     types = [];
     photo;
-    experiencia;
-    altura;
-    peso;
-    formas;
+    base_experience;
+    rarity;
+    height;
+    weight;
     localidade;
-    movimentos;
+    moves;
 }
 
